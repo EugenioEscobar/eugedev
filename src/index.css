@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #8B6E1A #0A0A0A;
+  }
+
+  body {
+    @apply bg-black text-cream font-sans font-light antialiased overflow-x-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #8B6E1A;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .section-tag {
+    @apply inline-block text-gold text-[0.65rem] tracking-[0.25em] uppercase mb-5 relative pl-7;
+  }
+  .section-tag::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-[18px] h-px bg-gold;
+  }
+
+  .section-title {
+    @apply font-playfair text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+
+  .section-divider {
+    @apply w-14 h-px bg-gradient-to-r from-gold to-transparent mb-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 px-9 py-4 bg-gold text-black font-sans text-[0.8rem] font-semibold tracking-[0.12em] uppercase transition-all duration-300 relative overflow-hidden;
+  }
+  .btn-primary:hover {
+    @apply bg-gold-light;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2.5 px-8 py-[15px] border border-white/20 text-cream font-sans text-[0.8rem] font-medium tracking-[0.12em] uppercase transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply border-gold text-gold;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2.5 px-7 py-[15px] border border-[#25D366]/30 text-[#25D366] font-sans text-[0.8rem] font-medium tracking-[0.1em] uppercase transition-all duration-300;
+  }
+  .btn-whatsapp:hover {
+    @apply bg-[#25D366]/10 border-[#25D366];
+  }
+
+  .gold-border-card {
+    @apply border border-gold/15 transition-all duration-300;
+  }
+  .gold-border-card:hover {
+    @apply border-gold/40;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Grid background pattern */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 80%);
+}
+
+/* Noise texture */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
