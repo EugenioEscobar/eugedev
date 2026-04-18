@@ -3,6 +3,7 @@ node_modules/
 
 # Build
 dist/
+build.zip
 
 # Logs
 npm-debug.log*

@@ -2,7 +2,7 @@ import { sobre } from '../data/content'
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="bg-black-2 px-6 md:px-14 py-24 md:py-28">
+    <section id="sobre" className="bg-black px-6 md:px-14 py-24 md:py-28">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-20 items-start">
 
         {/* Photo */}
@@ -12,7 +12,7 @@ export default function Sobre() {
             <img
               src={sobre.photo.src}
               alt={sobre.photo.alt}
-              className="w-full block object-cover object-top"
+              className="w-full block object-cover object-top [mask-image:linear-gradient(to_bottom,black_50%,transparent_88%)]"
               style={{ aspectRatio: '3/4' }}
               loading="lazy"
             />

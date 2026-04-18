@@ -41,7 +41,7 @@ export const hero = {
   // Pexels — professional man at desk, dark tone
   // Photographer: Andrea Piacquadio  |  Free to use
   photo: {
-    src: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=800&h=1100&dpr=1',
+    src: '/image2.png',
     alt: 'Eugenio Escobar — Desarrollador Web',
     credit: 'Foto: Pexels / Andrea Piacquadio',
   },
@@ -219,9 +219,9 @@ export const sobre = {
   // Pexels — professional man dark studio, confidence
   // Photographer: Italo Melo  |  Free to use
   photo: {
-    src: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=700&h=950&dpr=1',
+    src: '/image1.png',
     alt: 'Eugenio Escobar — EugeDev',
-    credit: 'Foto de ejemplo: Pexels / Italo Melo',
+    credit: '',
   },
 }
 
@@ -234,7 +234,7 @@ export const contacto = {
   items: [
     { icon: 'whatsapp', label: 'WhatsApp',       value: '+56 9 7211 6431',        href: 'https://wa.me/56972116431' },
     { icon: 'email',    label: 'Email',           value: 'euge.escobar@eugedev.cl',    href: 'mailto:euge.escobar@eugedev.cl' },
-    { icon: 'calendar', label: 'Agendar reunión', value: 'Calendly — Sin costo',   href: 'https://calendly.com/', external: true },
+    { icon: 'calendar', label: 'Agendar reunión', value: 'AgendaPro — Sin costo',   href: 'https://eugedev.site.agendapro.com/cl', external: true },
   ],
   form: {
     fields: [
@@ -247,7 +247,7 @@ export const contacto = {
   buttons: [
     { label: 'Enviar mensaje',  type: 'submit',   variant: 'primary'   },
     { label: 'WhatsApp',        href: 'https://wa.me/56972116431', variant: 'whatsapp', icon: 'whatsapp', external: true },
-    { label: 'Agendar reunión', href: 'https://calendly.com/',     variant: 'outline',  icon: 'calendar', external: true },
+    { label: 'Agendar reunión', href: 'https://eugedev.site.agendapro.com/cl',     variant: 'outline',  icon: 'calendar', external: true },
   ],
 }
 

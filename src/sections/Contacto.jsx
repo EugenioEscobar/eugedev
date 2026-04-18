@@ -77,7 +77,7 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="bg-black px-6 md:px-14 py-24 md:py-28">
+    <section id="contacto" className="bg-black-2 px-6 md:px-14 py-24 md:py-28">
       <div className="max-w-[1200px] mx-auto">
 
         <div className="text-center max-w-xl mx-auto mb-16 reveal">

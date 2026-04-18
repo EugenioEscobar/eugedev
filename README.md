@@ -54,13 +54,12 @@ eugedev/
 **Todo se edita en `src/data/content.js`** sin tocar ningún componente.
 
 ### Tu foto real
-Pon tu imagen en `/public/` y actualiza las URLs en `content.js`:
 ```js
 hero: {
-  photo: { src: '/foto-hero.png', alt: 'Tu nombre' }
+  photo: { src: '/foto-hero.png', alt: 'Eugenio Escobar' }
 }
 sobre: {
-  photo: { src: '/foto-sobre.png', alt: 'Tu nombre' }
+  photo: { src: '/foto-sobre.png', alt: 'Eugenio Escobar' }
 }
 ```
 
@@ -72,15 +71,6 @@ contacto: {
     { href: 'mailto:tucorreo@dominio.cl', value: 'tucorreo@dominio.cl', ... },
   ]
 }
-```
-
-### Imágenes (Pexels)
-Las imágenes de ejemplo usan URLs de Pexels (gratuitas).
-Para reemplazarlas, actualiza los campos `image.src` en `content.js`.
-
-Formato URL de Pexels:
-```
-https://images.pexels.com/photos/{ID}/pexels-photo-{ID}.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1
 ```
 
 ## 🎨 Colores (tailwind.config.js)

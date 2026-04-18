@@ -20,7 +20,7 @@ export default function App() {
         <Hero />
         <Valor />
         <Servicios />
-        <Dental />
+        {/* <Dental /> */}
         <Proyectos />
         <Sobre />
         <Contacto />
