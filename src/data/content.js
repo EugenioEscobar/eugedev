@@ -206,7 +206,7 @@ export const sobre = {
   tag:   'Sobre EugeDev',
   title: { line1: 'Eugenio Escobar,', line2: 'Desarrollador Web' },
   paragraphs: [
-    'Soy desarrollador con más de 6 años de experiencia construyendo soluciones tecnológicas para empresas y profesionales. Mi enfoque está en entender el problema real antes de escribir una sola línea de código.',
+    'Soy desarrollador con más de 8 años de experiencia construyendo soluciones tecnológicas para empresas y profesionales. Mi enfoque está en entender el problema real antes de escribir una sola línea de código.',
     'He trabajado en proyectos para organizaciones que exigen calidad, confiabilidad y resultados medibles. Cada proyecto que entrego es resultado de análisis, diseño cuidadoso y ejecución técnica de primer nivel.',
   ],
   stats: [
@@ -266,4 +266,9 @@ export const footer = {
 export const whatsappFloat = {
   href:  'https://wa.me/56972116431',
   label: 'Escríbeme por WhatsApp',
+}
+
+export const api = {
+  contactoUrl: `${import.meta.env.VITE_API_URL}/contacto/`,
+  honeypotField: 'website', // nombre del campo honeypot
 }

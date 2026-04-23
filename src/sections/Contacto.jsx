@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { contacto } from '../data/content'
+import { contacto, api } from '../data/content'
 import { Icon, WhatsAppIcon, CalendarIcon } from '../components/Icons'
 
 function ContactItem({ item }) {
@@ -25,8 +25,8 @@ function ContactItem({ item }) {
 function FormButton({ btn, sent }) {
   const base = 'inline-flex items-center gap-2.5 font-sans font-medium tracking-[0.1em] uppercase text-[0.8rem] transition-all duration-300'
   const variants = {
-    primary:  `px-8 py-4 bg-gold text-black hover:bg-gold-light ${sent ? '!bg-green-700 !text-white' : ''}`,
-    outline:  'px-7 py-[15px] border border-white/20 text-cream hover:border-gold hover:text-gold',
+    primary: `px-8 py-4 bg-gold text-black hover:bg-gold-light ${sent ? '!bg-green-700 !text-white' : ''}`,
+    outline: 'px-7 py-[15px] border border-white/20 text-cream hover:border-gold hover:text-gold',
     whatsapp: 'px-6 py-[15px] border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366]/10 hover:border-[#25D366]',
   }
 
@@ -51,15 +51,47 @@ function FormButton({ btn, sent }) {
 }
 
 export default function Contacto() {
-  const [sent, setSent]   = useState(false)
-  const [form, setForm]   = useState(
+  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState(
     Object.fromEntries(contacto.form.fields.map((f) => [f.id, '']))
   )
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3500)
+    try {
+      const response = await fetch(api.contactoUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre: form.nombre,
+          email: form.email,
+          mensaje: form.mensaje,
+          empresa: form.empresa || '',
+          website: form.website || '',
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error('Error en la solicitud')
+      }
+
+      setSent(true)
+      setForm({
+        nombre: '',
+        email: '',
+        mensaje: '',
+        empresa: '',
+        website: ''
+      })
+
+      setTimeout(() => setSent(false), 3500)
+
+    } catch (error) {
+      console.error('Error enviando formulario:', error)
+      alert('Hubo un problema al enviar el mensaje')
+    }
   }
 
   // Group fields: pairs that are half go in same row
@@ -147,6 +179,17 @@ export default function Contacto() {
                   <FormButton key={btn.label} btn={btn} sent={sent} />
                 ))}
               </div>
+              {/* Honeypot anti-spam — invisible para humanos, los bots lo rellenan */}
+              <input
+                type="text"
+                name={api.honeypotField}
+                value={form.website || ''}
+                onChange={(e) => setForm({ ...form, website: e.target.value })}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+              />
             </form>
           </div>
         </div>

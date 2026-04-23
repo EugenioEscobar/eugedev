@@ -99,7 +99,7 @@ export default function Hero() {
               src={hero.photo.src}
               alt={hero.photo.alt}
               className="relative z-10 w-full h-full object-cover object-top"
-              style={{ aspectRatio: '3/4', filter: 'sepia(80%) contrast(110%) brightness(90%)' }}
+              style={{ aspectRatio: '3/4', filter: 'sepia(30%) contrast(110%) brightness(90%)' }}
               loading="eager"
             />
 
